@@ -39,6 +39,10 @@ def download_subtitles():
             log("No path provided")
             return error("No path provided.", 406)
 
+        # check if languages is empty, if so use english
+        if not 'languages' in mydata or not mydata['languages']:
+            mydata['languages'] = "eng"
+
         log(json.dumps(mydata))
         path = mydata['path']
         videos = []
