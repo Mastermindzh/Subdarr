@@ -10,12 +10,13 @@ Simply run the container and follow the "connector installation" instructions to
 - [Dockerhub](https://hub.docker.com/r/mastermindzh/subdarr/)
 
 ## Table of contents
-  * [Installation](#installation)
-    + [With Docker](#with-docker)
-    + [Without Docker](#without-docker)
-    + [Connector installation](#connector-installation)
-  * [Extending the logger](#extending-the-logger)
-    + [If you're running with docker](#if-youre-running-with-docker)
+* [Installation](#installation)
+  + [With Docker](#with-docker)
+  + [Without Docker](#without-docker)
+  + [Connector installation](#connector-installation)
+* [Extending the logger](#extending-the-logger)
+  + [If you're running with docker](#if-youre-running-with-docker)
+* [scan an entire folder for existing file](#scan-an-entire-folder-for-existing-files)
 
 ## Installation
 Below you'll find the installation instructions for Subdarr. It will go into both installing with and without Docker and finish with the connector installation.
