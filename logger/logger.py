@@ -5,4 +5,5 @@
 
 def log(message):
     """Logs a message to the command line"""
+    print(message)
     

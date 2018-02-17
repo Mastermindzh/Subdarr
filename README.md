@@ -66,7 +66,7 @@ You can find this file in the "connector" directory or call the 'connector' endp
 The logger, by default, does nothing (yay freedom).
 It is possible to extend the logger if you know how to write Python code.
 Simply edit the logger/logger.py file and edit what the "log" method does.
-In the example below I changed the log method to log a seperator before and after the actual message.
+In the example below I changed the log method to log a separator before and after the actual message.
 
 ```python
 def log(message):
@@ -89,3 +89,25 @@ The complete command will look something like this:
 ```
 docker run --name Subdarr -p 5500:5500 -v /my/custom/path/logger.py:/app/logger/logger.py mastermindzh/subdarr
 ```
+
+## scan an entire folder for existing files
+To scan an entire folder you have to call the `/scan` endpoint with the following JSON document (only path is mandatory, defaults to English and 14 days):
+
+```json
+{
+	"languages": "eng,nld",
+	"path":"/movies",
+	"age": 14
+}
+```
+
+This will give you the following cURL command:
+```bash
+curl --request POST \
+  --url http://localhost:5500/scan \
+  --header 'cache-control: no-cache' \
+  --header 'content-type: application/json' \
+  --data '{\n	"languages": "eng,nld",\n	"path":"/movies",\n	"age": 14\n}'
+```
+
+You could automate it with [cron](http://www.unixgeeks.org/security/newbie/unix/cron-1.html) or [systemd Timers](https://coreos.com/os/docs/latest/scheduling-tasks-with-systemd-timers.html) too.
