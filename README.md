@@ -108,7 +108,7 @@ curl --request POST \
   --url http://localhost:5500/scan \
   --header 'cache-control: no-cache' \
   --header 'content-type: application/json' \
-  --data '{\n	"languages": "eng,nld",\n	"path":"/movies",\n	"age": 14\n}'
+  --data '{"languages": "eng,nld","path":"/movies","age": 14}'
 ```
 
 You could automate it with [cron](http://www.unixgeeks.org/security/newbie/unix/cron-1.html) or [systemd Timers](https://coreos.com/os/docs/latest/scheduling-tasks-with-systemd-timers.html) too.
